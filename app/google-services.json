@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "708978769545",
+    "project_id": "gettheemailtest",
+    "storage_bucket": "gettheemailtest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708978769545:android:894a76d4d6a920b6f71058",
+        "android_client_info": {
+          "package_name": "app.saby.gettheemail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708978769545-67n3d70c1hmeaubrp4es2jnn241qhsam.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoSAU68ziICAL0UBH7FFPioSHOv55d3yM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708978769545-67n3d70c1hmeaubrp4es2jnn241qhsam.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
