@@ -1,5 +1,5 @@
 package app.saby.gettheemail.domain
 
 data class Secret (
-    val email: String
+    val email: String? = null
 )
