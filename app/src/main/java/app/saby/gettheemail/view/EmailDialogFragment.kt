@@ -18,13 +18,13 @@ class EmailDialog:DialogFragment() {
     }
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
-            val builder =   AlertDialog.Builder(it)
+            AlertDialog.Builder(it)
             .setTitle(title)
             .setMessage(message)
             .setPositiveButton(getString(R.string.dialog_positive_button)) { dialog, id ->
                 dialog.cancel();
-            };
-            builder.create();
+            }
+            .create();
         }?: throw IllegalStateException("Activity cannot be null")
     }
     companion object {

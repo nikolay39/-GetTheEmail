@@ -13,13 +13,12 @@ import app.saby.gettheemail.R
 import app.saby.gettheemail.databinding.ActivityMainBinding
 import app.saby.gettheemail.model.Weather
 import app.saby.gettheemail.viewmodel.EmailViewModel
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 
 const val CHANNEL_ID:String = "getTheEmail";
 const val NOTIFICATION_ID:Int = 123;
 
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var binding: ActivityMainBinding;
     val model: EmailViewModel by viewModels();
@@ -31,25 +30,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater);
         val view = binding.root
         setContentView(view)
-        model.getTestData();
-        model.weatherObservable.let { it->
-            model.mDisposable.add(
-                it.subscribeOn(Schedulers.computation())
-                    .doOnError{error ->
-                        binding.tvMessage.text = error.message; }
-                    .filter{weather:Weather ->
-                        with(NotificationManagerCompat.from(this)) {
-                            cancel(NOTIFICATION_ID)
-                        }
-                        binding.tvMessage.text = getString(R.string.email_not_found);
-                        weather.secret_code !== null;
-                    }
-                    .flatMap{weater: Weather -> model.selectEmail(weater)}
-                    .doOnError{error -> binding.tvError.text = error.message; }
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe {message -> showEmail(message)}
-            )
-        }
     }
     override fun onStart() {
         super.onStart()
@@ -67,8 +47,9 @@ class MainActivity : AppCompatActivity() {
     */
     fun showEmail(message: String?) {
         message?.let {
-            if (!active)
+            if (!active) {
                 showNotification(message);
+            }
             EmailDialog.newInstance(getString(R.string.dialog_title), message).show(this.supportFragmentManager, EmailDialog.TAG);
             binding.tvMessage.text = message;
         }
