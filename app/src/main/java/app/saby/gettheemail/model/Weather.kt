@@ -1,4 +1,4 @@
-package app.saby.gettheemail.domain
+package app.saby.gettheemail.model
 
 data class Weather(
     val id      : String? = null,

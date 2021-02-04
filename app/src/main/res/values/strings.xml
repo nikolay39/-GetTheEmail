@@ -3,4 +3,5 @@
     <string name="channel_name">GetTheEmail</string>
     <string name="email_not_found">Email not found</string>
     <string name="dialog_title">Email found</string>
+    <string name="dialog_positive_button">OK</string>
 </resources>
