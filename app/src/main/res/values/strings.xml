@@ -4,4 +4,7 @@
     <string name="email_not_found">Email not found</string>
     <string name="dialog_title">Email found</string>
     <string name="dialog_positive_button">OK</string>
+    <string name="stop_location">стоп сервис</string>
+    <string name="launch_activity">Запустить app</string>
+    <string name="default_notification">Отслеживание email</string>
 </resources>

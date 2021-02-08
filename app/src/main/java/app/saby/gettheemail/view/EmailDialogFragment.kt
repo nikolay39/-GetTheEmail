@@ -17,6 +17,7 @@ class EmailDialog:DialogFragment() {
         }
     }
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+
         return activity?.let {
             AlertDialog.Builder(it)
             .setTitle(title)

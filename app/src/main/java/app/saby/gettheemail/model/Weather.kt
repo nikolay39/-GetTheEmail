@@ -1,17 +1,21 @@
 package app.saby.gettheemail.model
+
+
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+
 @Serializable
 data class Weather(
-    val id      : String? = null,
-    val title   : String? = null,
-    val temp    : Float? = null,
-    @SerialName("image_url")
-    val imageUrl: String? = null,
-    @SerialName("secret_code")
-    val secretCode: String? = null,
-    val timeStamp: Long? = null
-)
+    var id      : String? = null,
+    var title   : String? = null,
+    var temp    : Float? = null,
+    var image_url: String? = null,
+    var secret_code: String? = null,
+    var timeStamp: Long? = null
+) {
+    val secretCode: String?
+        get() = this.secret_code
+}
 
 
 
